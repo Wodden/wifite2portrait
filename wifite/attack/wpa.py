@@ -114,7 +114,7 @@ class AttackWPA(Attack):
                 Color.pattack('WPA',
                         airodump_target,
                         'Handshake capture',
-                        'Listening. (clients:{G}%d{W}, deauth:{O}%s{W}, timeout:{R}%s{W})' % (len(self.clients), deauth_timer, timeout_timer))
+                        'c:{G}%d{W}, d:{O}%s{W}, t:{R}%s{W}' % (len(self.clients), deauth_timer, timeout_timer))
 
                 # Find .cap file
                 cap_files = airodump.find_files(endswith='.cap')
@@ -155,7 +155,7 @@ class AttackWPA(Attack):
                         Color.pattack('WPA',
                                 airodump_target,
                                 'Handshake capture',
-                                'Discovered new client: {G}%s{W}' % client.station)
+                                'client: {G}%s{W}' % client.station)
                         Color.pl('')
                         self.clients.append(client.station)
 
